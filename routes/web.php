@@ -31,6 +31,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/users', [UserController::class, 'index'])->name('overzicht-gebruikers');
+Route::get('/users/create', [UserController::class, 'create'])->name('maak-gebruiker');
+Route::post('/users/create', [UserController::class, 'store'])->name('sla-gebruiker-op');
 
 Route::get('/posts', [PostController::class, 'index'])->name('overzicht-berichten');
 
